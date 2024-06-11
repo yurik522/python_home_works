@@ -30,16 +30,16 @@ def get_list_phrases(text: str):
 
 def checking_rhyme(array_phrases, set_letter):
     count_syllable_in_first_phrases = 0
-    for char in array_phrases[0]:
-        if char in set_letter:
+    for char in array_phrases[0]:  # определяем количество слогов в первом слове
+        if char in set_letter:     # и берем это за эталон
             count_syllable_in_first_phrases += 1
-    for i in range(1, len(array_phrases)):
-        syllable_current_phrase = 0
+    for i in range(1, len(array_phrases)): # сравниваем количество слогов в 
+        syllable_current_phrase = 0       # следующих словах с эталоном
         for item in array_phrases[i]:
             if item in set_letter:
                 syllable_current_phrase += 1
         if syllable_current_phrase != count_syllable_in_first_phrases:
-            return False
+            return False 
     return True
 
 
